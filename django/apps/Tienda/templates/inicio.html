@@ -1,0 +1,50 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-5">
+            <h2>Perros</h2>
+            {% for p in cate_perros %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{p.imagen_url.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.nombre}}</h5>
+                      <p class="card-text">{{p.descripcion}}</p>
+                      <a href="#" class="btn btn-primary">{{p.precio}}</a>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="row mt-5">
+            <h2>Gatos</h2>
+            {% for p in cate_gatos %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{p.imagen_url.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{p.nombre}}</h5>
+                      <p class="card-text">{{p.descripcion}}</p>
+                      <a href="#" class="btn btn-primary">{{p.precio}}</a>
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/funciones.js' %}"></script>
+{% endblock %}
